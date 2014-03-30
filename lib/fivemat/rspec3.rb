@@ -4,15 +4,6 @@ module Fivemat
   class RSpec3 < ::RSpec::Core::Formatters::BaseTextFormatter
     include ElapsedTime
 
-    ::RSpec::Core::Formatters.register self,
-      :example_passed,
-      :example_pending,
-      :example_failed,
-      :example_group_started,
-      :example_group_finished,
-      :dump_pending_fixed,
-      :dump_summary
-
     def initialize(output)
       super(output)
       @group_level = 0
