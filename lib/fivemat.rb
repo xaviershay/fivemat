@@ -7,6 +7,16 @@ module Fivemat
   autoload :RSpec3, 'fivemat/rspec3'
   autoload :Spec, 'fivemat/spec'
 
+  # declare support for RSpec 3
+  ::RSpec::Core::Formatters.register self,
+    :example_passed,
+    :example_pending,
+    :example_failed,
+    :example_group_started,
+    :example_group_finished,
+    :dump_pending_fixed,
+    :dump_summary
+
   def self.new(*args)
     case args.size
     when 0 then MiniTest::Unit
